@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" data-page="notes">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — Notas privadas</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="notes">
+<script>window.BASE_PATH = "../";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>📝 Notas privadas</h2>
+          <p>Información libre: preguntas de seguridad, códigos de respaldo, recordatorios.</p>
+        </div>
+        <button class="btn btn--primary" id="add-btn" type="button">+ Nueva nota</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar__search">
+          <input type="search" id="search-input" placeholder="Buscar en notas..." autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="record-grid" id="record-grid"></div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal: crear/editar nota -->
+<div class="modal-overlay" id="note-modal">
+  <div class="modal">
+    <div class="modal__header">
+      <h3 id="modal-title">Nueva nota</h3>
+      <button class="icon-btn" data-modal-close type="button">✕</button>
+    </div>
+    <form id="note-form">
+      <div class="modal__body">
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="f-title">Título</label>
+            <input type="text" id="f-title" required placeholder="Ej. Preguntas de seguridad" />
+          </div>
+          <div class="form-field">
+            <label for="f-category">Categoría</label>
+            <input type="text" id="f-category" placeholder="Ej. Seguridad, 2FA, General" />
+          </div>
+          <div class="form-field">
+            <label for="f-pinned">Fijar nota</label>
+            <select id="f-pinned">
+              <option value="false">No</option>
+              <option value="true">Sí</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-content">Contenido</label>
+            <textarea id="f-content" rows="5" required></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn" data-modal-close>Cancelar</button>
+        <button type="submit" class="btn btn--primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="../js/layout.js"></script>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../js/notes.js"></script>
+</body>
+</html>

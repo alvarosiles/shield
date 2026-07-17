@@ -1,0 +1,36 @@
+{
+  "documents": [
+    {
+      "id": "dc-001",
+      "type": "Licencia",
+      "name": "Licencia Windows 11 Pro",
+      "date": "2026-01-10",
+      "file": "licencia-windows11.pdf",
+      "notes": "Clave de producto vinculada a la cuenta Microsoft"
+    },
+    {
+      "id": "dc-002",
+      "type": "Certificado",
+      "name": "Certificado SSL alvarosiles.cloud",
+      "date": "2026-02-15",
+      "file": "ssl-alvarosiles.crt",
+      "notes": "Válido por 1 año, renovación automática"
+    },
+    {
+      "id": "dc-003",
+      "type": "Contrato",
+      "name": "Contrato de hosting anual",
+      "date": "2026-03-01",
+      "file": "contrato-hosting-2026.pdf",
+      "notes": "Plan Business - renovación en marzo 2027"
+    },
+    {
+      "id": "dc-004",
+      "type": "Licencia",
+      "name": "Licencia Adobe Creative Cloud",
+      "date": "2026-04-20",
+      "file": "licencia-adobe.pdf",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" data-page="cards">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — Tarjetas</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="cards">
+<script>window.BASE_PATH = "../";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>💳 Tarjetas</h2>
+          <p>Tu billetera visual. Los números completos nunca se muestran.</p>
+        </div>
+        <button class="btn btn--primary" id="add-btn" type="button">+ Nueva tarjeta</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar__search">
+          <input type="search" id="search-input" placeholder="Buscar por banco o titular..." autocomplete="off" />
+        </div>
+        <select class="select" id="type-filter">
+          <option value="">Todos los tipos</option>
+          <option value="credit">Crédito</option>
+          <option value="debit">Débito</option>
+          <option value="virtual">Virtual</option>
+          <option value="prepaid">Prepago</option>
+        </select>
+      </div>
+
+      <div class="wallet-grid" id="wallet-grid"></div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal: crear/editar tarjeta -->
+<div class="modal-overlay" id="card-modal">
+  <div class="modal">
+    <div class="modal__header">
+      <h3 id="modal-title">Nueva tarjeta</h3>
+      <button class="icon-btn" data-modal-close type="button">✕</button>
+    </div>
+    <form id="card-form">
+      <div class="modal__body">
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="f-bank">Nombre de tarjeta / Banco</label>
+            <input type="text" id="f-bank" required placeholder="Ej. Banco Demo" />
+          </div>
+          <div class="form-field">
+            <label for="f-type">Tipo</label>
+            <select id="f-type">
+              <option value="credit">Crédito</option>
+              <option value="debit">Débito</option>
+              <option value="virtual">Virtual</option>
+              <option value="prepaid">Prepago</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-brand">Marca</label>
+            <input type="text" id="f-brand" placeholder="VISA / MASTERCARD" />
+          </div>
+          <div class="form-field">
+            <label for="f-holder">Titular</label>
+            <input type="text" id="f-holder" required />
+          </div>
+          <div class="form-field">
+            <label for="f-last4">Últimos 4 dígitos</label>
+            <input type="text" id="f-last4" maxlength="4" pattern="\d{4}" required placeholder="0000" />
+          </div>
+          <div class="form-field">
+            <label for="f-expiration">Fecha vencimiento</label>
+            <input type="text" id="f-expiration" placeholder="MM/AA" required />
+          </div>
+          <div class="form-field">
+            <label for="f-color">Color</label>
+            <select id="f-color">
+              <option value="blue">Azul</option>
+              <option value="green">Verde</option>
+              <option value="purple">Morado</option>
+              <option value="dark">Oscuro</option>
+              <option value="orange">Naranja</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-notes">Notas</label>
+            <textarea id="f-notes"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn" data-modal-close>Cancelar</button>
+        <button type="submit" class="btn btn--primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="../js/layout.js"></script>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../js/cards.js"></script>
+</body>
+</html>

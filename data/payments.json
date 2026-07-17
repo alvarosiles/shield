@@ -1,0 +1,40 @@
+{
+  "payments": [
+    {
+      "id": "pm-001",
+      "type": "Banco",
+      "name": "Banco Demo - Cuenta Corriente",
+      "account": "ES00 0000 0000 0000 0000",
+      "qr": false,
+      "description": "Cuenta principal para pagos de servicios",
+      "status": "active"
+    },
+    {
+      "id": "pm-002",
+      "type": "Billetera digital",
+      "name": "PayDemo Wallet",
+      "account": "demo@paywallet.com",
+      "qr": true,
+      "description": "Billetera para compras en línea",
+      "status": "active"
+    },
+    {
+      "id": "pm-003",
+      "type": "Cuenta",
+      "name": "Caja de Ahorro Demo",
+      "account": "AR00 0000 0000 0000 0000",
+      "qr": false,
+      "description": "Ahorros de emergencia",
+      "status": "active"
+    },
+    {
+      "id": "pm-004",
+      "type": "QR de pago",
+      "name": "QR Comercio Demo",
+      "account": "QR-DEMO-99231",
+      "qr": true,
+      "description": "Código QR para cobros del negocio",
+      "status": "inactive"
+    }
+  ]
+}

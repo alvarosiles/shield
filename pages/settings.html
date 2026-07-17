@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" data-page="settings">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — Configuración</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="settings">
+<script>window.BASE_PATH = "../";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>⚙ Configuración</h2>
+          <p>Preferencias de la aplicación, almacenadas en LocalStorage.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <section class="panel">
+          <div class="panel__header"><h3>Preferencias</h3></div>
+          <div class="form-grid">
+            <div class="form-field form-field--full">
+              <label for="p-banner">Mostrar aviso de seguridad en el Dashboard</label>
+              <select id="p-banner">
+                <option value="true">Mostrar</option>
+                <option value="false">Ocultar</option>
+              </select>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="p-mask">Ocultar contraseñas y claves por defecto</label>
+              <select id="p-mask">
+                <option value="true">Sí, ocultar</option>
+                <option value="false">No, mostrar</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-2">
+            <button class="btn btn--primary" id="save-prefs-btn" type="button">Guardar preferencias</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header"><h3>Datos de la bóveda</h3></div>
+          <p class="text-muted" style="font-size: 0.85rem;">
+            Todos los datos se guardan localmente en tu navegador (LocalStorage). Nada se envía a un servidor.
+          </p>
+          <div class="mt-2 flex gap-1" style="flex-wrap: wrap;">
+            <button class="btn" id="export-btn" type="button">⬇ Exportar datos (.json)</button>
+            <button class="btn btn--danger" id="reset-btn" type="button">↺ Restablecer datos demo</button>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <div class="panel__header"><h3>Acerca de Shield</h3></div>
+        <p class="text-muted" style="font-size: 0.85rem;">
+          Shield es una plantilla de bóveda digital personal construida con HTML5, CSS3 y JavaScript ES6 puro,
+          sin frameworks ni backend. Esta es una versión demo: no almacenes información sensible real sin
+          cifrado. Consulta el <a href="../README.md" class="text-muted" style="text-decoration: underline;">README</a>
+          para conocer cómo extender la arquitectura con cifrado, autenticación y sincronización segura.
+        </p>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="../js/layout.js"></script>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../js/settings.js"></script>
+</body>
+</html>

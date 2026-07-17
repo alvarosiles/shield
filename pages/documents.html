@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" data-page="documents">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — Documentos</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="documents">
+<script>window.BASE_PATH = "../";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>📄 Documentos</h2>
+          <p>Licencias, certificados, contratos y otros archivos importantes.</p>
+        </div>
+        <button class="btn btn--primary" id="add-btn" type="button">+ Nuevo documento</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar__search">
+          <input type="search" id="search-input" placeholder="Buscar por nombre..." autocomplete="off" />
+        </div>
+        <select class="select" id="type-filter">
+          <option value="">Todos los tipos</option>
+          <option value="Licencia">Licencia</option>
+          <option value="Certificado">Certificado</option>
+          <option value="Contrato">Contrato</option>
+        </select>
+      </div>
+
+      <div class="record-grid" id="record-grid"></div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal: crear/editar documento -->
+<div class="modal-overlay" id="document-modal">
+  <div class="modal">
+    <div class="modal__header">
+      <h3 id="modal-title">Nuevo documento</h3>
+      <button class="icon-btn" data-modal-close type="button">✕</button>
+    </div>
+    <form id="document-form">
+      <div class="modal__body">
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="f-name">Nombre</label>
+            <input type="text" id="f-name" required placeholder="Ej. Licencia Windows 11 Pro" />
+          </div>
+          <div class="form-field">
+            <label for="f-type">Tipo de documento</label>
+            <select id="f-type">
+              <option value="Licencia">Licencia</option>
+              <option value="Certificado">Certificado</option>
+              <option value="Contrato">Contrato</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-date">Fecha</label>
+            <input type="date" id="f-date" required />
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-file">Archivo asociado (referencia)</label>
+            <input type="text" id="f-file" placeholder="Ej. contrato.pdf" />
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-notes">Notas</label>
+            <textarea id="f-notes"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn" data-modal-close>Cancelar</button>
+        <button type="submit" class="btn btn--primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="../js/layout.js"></script>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../js/documents.js"></script>
+</body>
+</html>

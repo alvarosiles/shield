@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "id": "cd-001",
+      "bank": "Banco Demo",
+      "type": "credit",
+      "brand": "VISA",
+      "holder": "Usuario Demo",
+      "last4": "4589",
+      "expiration": "12/28",
+      "color": "blue",
+      "notes": "Tarjeta principal"
+    },
+    {
+      "id": "cd-002",
+      "bank": "Banco Nación Demo",
+      "type": "debit",
+      "brand": "MASTERCARD",
+      "holder": "Usuario Demo",
+      "last4": "7723",
+      "expiration": "08/27",
+      "color": "green",
+      "notes": "Cuenta sueldo"
+    },
+    {
+      "id": "cd-003",
+      "bank": "Fintech Wallet",
+      "type": "virtual",
+      "brand": "VISA",
+      "holder": "Usuario Demo",
+      "last4": "0091",
+      "expiration": "05/29",
+      "color": "purple",
+      "notes": "Uso exclusivo para compras en línea"
+    },
+    {
+      "id": "cd-004",
+      "bank": "Banco Prepago Demo",
+      "type": "prepaid",
+      "brand": "MASTERCARD",
+      "holder": "Usuario Demo",
+      "last4": "3345",
+      "expiration": "02/27",
+      "color": "orange",
+      "notes": "Recarga mensual límite $200"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "id": "nt-001",
+      "title": "Preguntas de seguridad",
+      "content": "Banco Demo: nombre de mi primera mascota = Firulais.\nGoogle: ciudad de nacimiento = Ciudad Demo.",
+      "category": "Seguridad",
+      "createdAt": "2026-01-20",
+      "pinned": true
+    },
+    {
+      "id": "nt-002",
+      "title": "Códigos de respaldo 2FA",
+      "content": "GitHub: 8412-9931, 5023-1187, 6689-4402 (usar solo si pierdo el autenticador)",
+      "category": "2FA",
+      "createdAt": "2026-02-14",
+      "pinned": true
+    },
+    {
+      "id": "nt-003",
+      "title": "Recordatorio renovaciones",
+      "content": "Revisar renovación de dominio en diciembre y del certificado SSL en febrero.",
+      "category": "General",
+      "createdAt": "2026-04-02",
+      "pinned": false
+    }
+  ]
+}

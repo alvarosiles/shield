@@ -1,0 +1,44 @@
+{
+  "services": [
+    {
+      "id": "sv-001",
+      "name": "Netflix",
+      "category": "Streaming",
+      "url": "https://netflix.com",
+      "account": "demo@shield.dev",
+      "plan": "Premium",
+      "notes": "Facturación mensual día 5",
+      "status": "active"
+    },
+    {
+      "id": "sv-002",
+      "name": "Spotify",
+      "category": "Streaming",
+      "url": "https://spotify.com",
+      "account": "demo@shield.dev",
+      "plan": "Individual",
+      "notes": "",
+      "status": "active"
+    },
+    {
+      "id": "sv-003",
+      "name": "Dropbox",
+      "category": "Almacenamiento",
+      "url": "https://dropbox.com",
+      "account": "demo@shield.dev",
+      "plan": "Plus 2TB",
+      "notes": "Backup de documentos importantes",
+      "status": "active"
+    },
+    {
+      "id": "sv-004",
+      "name": "Adobe Creative Cloud",
+      "category": "Software",
+      "url": "https://adobe.com",
+      "account": "demo@shield.dev",
+      "plan": "Todas las apps",
+      "notes": "Licencia anual, renueva en octubre",
+      "status": "inactive"
+    }
+  ]
+}

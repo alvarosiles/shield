@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" data-page="dashboard">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — Dashboard</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="dashboard">
+<script>window.BASE_PATH = "";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="security-banner">
+        🔒 Información protegida — esta es una plantilla demo con datos ficticios.
+      </div>
+
+      <div class="stats-grid" id="stats-grid">
+        <!-- Stat cards renderizados por dashboard.js -->
+      </div>
+
+      <div class="two-col">
+        <section class="panel">
+          <div class="panel__header">
+            <h3>Últimos registros</h3>
+          </div>
+          <div id="recent-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <h3>Categorías utilizadas</h3>
+          </div>
+          <div id="category-list"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="js/layout.js"></script>
+<script type="module" src="app.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

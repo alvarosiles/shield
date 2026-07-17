@@ -1,511 +1,155 @@
-# shield
-Secure credential management template for organizing accounts, access information, and sensitive records.
-Actúa como un desarrollador Senior especializado en aplicaciones web seguras, HTML5, CSS3, JavaScript ES6, UX/UI y diseño de sistemas tipo Dashboard.
+# 🛡️ Shield
 
-Quiero crear una aplicación web llamada **Shield**.
+**Digital Vault Template** — plantilla de bóveda digital personal para organizar credenciales, tarjetas, pagos, servicios, documentos, notas y API keys.
 
-URL del proyecto:
-
-shield.alvarosiles.cloud
-
-Repositorio:
-
-shield
+Demo: [shield.alvarosiles.cloud](https://shield.alvarosiles.cloud)
 
 ---
 
-# Objetivo
+## Descripción
 
-Crear una plantilla de bóveda digital personal (**Digital Vault Template**) para organizar información privada.
+Shield es una plantilla web **premium, oscura y modular** inspirada en apps bancarias, password managers y billeteras digitales. Está pensada como punto de partida para construir tu propia bóveda personal: hoy funciona 100% en el navegador (sin backend), y su arquitectura está preparada para incorporar cifrado, autenticación y sincronización más adelante.
 
-La aplicación permitirá gestionar:
+> ⚠️ **Esta es una plantilla/demo.** Los datos incluidos en `data/*.json` son ficticios. No guardes información sensible real sin agregar cifrado y autenticación primero (ver [Seguridad](#seguridad)).
 
-* 🔑 Credenciales
-* 💳 Tarjetas
-* 💰 Métodos de pago
-* 📝 Notas privadas
-* 🌐 Servicios digitales
-* 📄 Licencias
-* 🔐 API Keys
-* 📁 Documentos importantes
+## Características
 
-Debe ser una plantilla profesional, moderna y escalable.
+- 🔑 **Credenciales** — usuarios, contraseñas, URLs y notas por servicio.
+- 💳 **Tarjetas** — billetera visual con tipos crédito/débito/virtual/prepago (números enmascarados).
+- 💰 **Métodos de pago** — bancos, billeteras digitales, cuentas y QR de pago.
+- 🌐 **Servicios digitales** — suscripciones y cuentas en línea.
+- 📄 **Documentos** — licencias, certificados y contratos.
+- 🔐 **API Keys** — claves de integración por entorno (desarrollo/producción).
+- 📝 **Notas privadas** — preguntas de seguridad, códigos de respaldo, recordatorios.
+- 📊 **Dashboard** — resumen de totales, últimos registros y categorías usadas.
+- 🔍 Búsqueda y filtros por categoría/tipo en cada módulo.
+- 👁️ Mostrar/ocultar información sensible, con copiado al portapapeles.
+- 💾 Persistencia local con `LocalStorage` (los JSON en `data/` son solo la semilla inicial).
+- 📱 Responsive: escritorio, tablet y móvil.
 
----
+## Tecnologías
 
-# Importante
+HTML5 · CSS3 · JavaScript ES6 (módulos nativos) · JSON · LocalStorage.
 
-Esta versión será una plantilla/demo.
+Sin frameworks. Sin backend. Código modular por archivo/módulo.
 
-No debe guardar información sensible real sin protección.
+## Instalación
 
-Utilizar datos ficticios de ejemplo.
+Shield no requiere `npm install` ni build. Como usa `fetch()` para leer los archivos `data/*.json`, necesitas servirlo con un servidor local (abrir `index.html` directamente con `file://` bloquea esas peticiones en la mayoría de navegadores).
 
-Preparar la arquitectura para agregar posteriormente:
+Opciones rápidas:
 
-* Cifrado
-* Autenticación
-* Base de datos
-* Usuarios
-* Sincronización segura
+```bash
+# Con Python
+python -m http.server 8080
 
----
+# Con Node (npx, sin instalar nada global)
+npx serve .
 
-# Tecnologías
-
-Utilizar:
-
-* HTML5
-* CSS3
-* JavaScript ES6
-* JSON
-* LocalStorage
-
-No utilizar frameworks.
-
-No utilizar backend.
-
-Código modular y escalable.
-
----
-
-# Diseño
-
-Crear una interfaz premium estilo:
-
-* Billetera digital
-* Dashboard financiero
-* Gestor de seguridad
-
-Inspiración:
-
-* Aplicaciones bancarias modernas
-* Password managers
-* Digital wallets
-
----
-
-# Tema visual
-
-Modo oscuro.
-
-Colores:
-
-Fondo:
-#0F172A
-
-Sidebar:
-#111827
-
-Tarjetas:
-#1E293B
-
-Color principal:
-#2563EB
-
-Color seguridad:
-#10B981
-
-Advertencia:
-#F59E0B
-
-Texto:
-#FFFFFF
-
-Diseño:
-
-* Bordes redondeados
-* Sombras suaves
-* Animaciones modernas
-* Responsive
-
-Compatible con:
-
-* Desktop
-* Tablet
-* Móvil
-
----
-
-# Dashboard
-
-Mostrar:
-
-🛡️ Shield
-
-Resumen:
-
-* Total credenciales
-* Total tarjetas
-* Total cuentas
-* Total documentos
-* Últimos registros
-* Categorías utilizadas
-
----
-
-# Menú lateral
-
-Crear:
-
-🏠 Dashboard
-
-🔑 Credenciales
-
-💳 Tarjetas
-
-💰 Pagos
-
-🌐 Servicios
-
-📄 Documentos
-
-🔐 API Keys
-
-📝 Notas
-
-⚙ Configuración
-
----
-
-# Módulo Credenciales
-
-Crear formulario:
-
-Campos:
-
-ID
-
-Nombre del servicio
-
-Categoría
-
-URL
-
-Usuario
-
-Contraseña
-
-Correo asociado
-
-Notas
-
-Fecha creación
-
-Estado
-
-Ejemplos:
-
-GitHub
-
-Hosting
-
-Cloud
-
-Correo
-
-Dominio
-
-Servidor
-
----
-
-# Módulo Tarjetas
-
-Crear una billetera visual.
-
-Tipos:
-
-* Crédito
-* Débito
-* Virtual
-* Prepago
-
-Campos:
-
-ID
-
-Nombre de tarjeta
-
-Banco
-
-Tipo
-
-Titular
-
-Últimos 4 dígitos
-
-Fecha vencimiento
-
-Color tarjeta
-
-Notas
-
-No mostrar números completos.
-
-Ejemplo:
-
-```text
-VISA
-
-**** **** **** 4589
-
-Usuario Demo
-
-12/28
+# Con la extensión "Live Server" de VS Code
+# clic derecho sobre index.html → "Open with Live Server"
 ```
 
----
+Luego abre `http://localhost:8080` en tu navegador.
 
-# Módulo Métodos de Pago
+## Uso
 
-Registrar:
+1. Al abrir el Dashboard por primera vez, cada módulo se **siembra** automáticamente desde su archivo `data/*.json` hacia `LocalStorage`.
+2. Desde cada módulo puedes **crear**, **editar**, **buscar**, **filtrar** y **eliminar** registros — todo se guarda en tu navegador.
+3. Los campos sensibles (contraseñas, claves) se muestran ocultos por defecto; usa el ícono 👁️ para revelarlos y 📋 para copiarlos.
+4. El botón **🔒 Bloquear bóveda** del sidebar simula un bloqueo visual (ver [Seguridad](#seguridad)).
+5. En **⚙ Configuración** puedes exportar tus datos a un `.json` o restablecer la bóveda a los datos demo originales.
 
-Banco
-
-Billetera digital
-
-Cuenta
-
-QR de pago
-
-Descripción
-
-Estado
-
----
-
-# Módulo Documentos
-
-Guardar referencias:
-
-Tipo documento
-
-Nombre
-
-Fecha
-
-Archivo asociado
-
-Notas
-
-Ejemplos:
-
-Licencias
-
-Certificados
-
-Contratos
-
----
-
-# Archivo JSON
-
-Crear carpeta:
-
-data/
-
-Archivos:
-
-credentials.json
-
-cards.json
-
-payments.json
-
-documents.json
-
----
-
-# Ejemplo cards.json
-
-{
-"cards":[
-{
-"id":1,
-"bank":"Banco Demo",
-"type":"credit",
-"holder":"Usuario Demo",
-"last4":"4589",
-"expiration":"12/28",
-"color":"blue",
-"notes":"Tarjeta principal"
-}
-]
-}
-
----
-
-# Vista Tarjetas
-
-Crear tarjetas visuales:
-
-Ejemplo:
-
----
-
-💳 Banco Demo
-
-VISA
-
-**** **** **** 4589
-
-Usuario Demo
-
-12/28
-
-[Ver]
-
-[Editar]
-
----
-
----
-
-# Funciones
-
-Implementar:
-
-✔ Leer datos desde JSON
-
-✔ Mostrar información dinámica
-
-✔ Buscar registros
-
-✔ Filtrar categorías
-
-✔ Crear tarjetas visuales
-
-✔ Mostrar/ocultar información
-
-✔ Copiar datos
-
-✔ Editar interfaz
-
-✔ Eliminar registros visualmente
-
-✔ Guardar preferencias con LocalStorage
-
----
-
-# Seguridad visual
-
-Agregar:
-
-* Ocultar información sensible
-* Botón mostrar/ocultar
-* Confirmaciones
-* Avisos de seguridad
-* Bloqueo visual simulado
-
-Ejemplo:
+## Estructura
 
 ```
-🔒 Información protegida
-```
-
----
-
-# Estructura del proyecto
-
-Crear:
-
 shield/
-
-├── index.html
-
-├── style.css
-
-├── app.js
-
+├── index.html              → Dashboard
+├── style.css                → Sistema de diseño (variables, componentes, responsive)
+├── app.js                    → Bootstrap general (modales, atajos globales)
 ├── pages/
-
 │   ├── credentials.html
-
 │   ├── cards.html
-
 │   ├── payments.html
-
+│   ├── services.html
 │   ├── documents.html
-
+│   ├── apikeys.html
+│   ├── notes.html
+│   └── settings.html
 ├── data/
-
 │   ├── credentials.json
-
 │   ├── cards.json
-
 │   ├── payments.json
-
-│   └── documents.json
-
+│   ├── services.json
+│   ├── documents.json
+│   ├── apikeys.json
+│   └── notes.json
 ├── js/
-
+│   ├── storage.js            → Capa de persistencia (LocalStorage + siembra desde JSON)
+│   ├── utils.js               → Helpers (formato, copiar, toasts, máscaras)
+│   ├── layout.js               → Sidebar, topbar y bloqueo visual (compartido)
+│   ├── dashboard.js
 │   ├── credentials.js
-
 │   ├── cards.js
-
-│   ├── storage.js
-
-│   └── utils.js
-
+│   ├── payments.js
+│   ├── services.js
+│   ├── documents.js
+│   ├── apikeys.js
+│   ├── notes.js
+│   └── settings.js
 ├── assets/
-
-│   ├── icons
-
-│   └── images
-
+│   ├── icons/
+│   └── images/
 ├── README.md
-
 └── LICENSE
+```
 
----
+Cada módulo sigue el mismo patrón: `pages/<modulo>.html` define la UI y los modales; `js/<modulo>.js` maneja carga, render, búsqueda/filtros y operaciones CRUD contra `js/storage.js`.
 
-# README.md
+## Seguridad
 
-Crear documentación:
+Esta plantilla incluye **seguridad visual**, no seguridad real de datos:
 
-* Descripción
-* Características
-* Instalación
-* Uso
-* Estructura
-* Seguridad
-* Cómo agregar información
-* Cómo publicar en hosting
-* Cómo conectar shield.alvarosiles.cloud
+- Ocultar/mostrar información sensible con un clic.
+- Confirmaciones antes de eliminar registros.
+- Avisos de seguridad en el Dashboard y en los formularios.
+- Bloqueo visual simulado (no cifra ni protege el acceso real a los datos).
 
----
+Para usar Shield con información real, la arquitectura está preparada para agregar:
 
-# Calidad del código
+- **Cifrado** de los valores sensibles antes de guardarlos (p. ej. WebCrypto + una passphrase maestra).
+- **Autenticación** (login local con hash + salt, o proveedor externo).
+- **Base de datos** real en lugar de `LocalStorage` (p. ej. IndexedDB o un backend propio).
+- **Usuarios** y permisos.
+- **Sincronización segura** entre dispositivos (API propia + cifrado extremo a extremo).
 
-El código debe ser:
+## Cómo agregar información
 
-* Profesional
-* Limpio
-* Modular
-* Comentado
-* Fácil de ampliar
+- **Desde la UI:** usa el botón "+ Nuevo…" de cada módulo; los datos quedan en `LocalStorage` de tu navegador.
+- **Datos semilla:** edita los archivos en `data/*.json` (mismo formato que ya usan) para cambiar los datos demo con los que arranca la app. Solo se usan si no existe aún la colección correspondiente en `LocalStorage`.
+- **Reiniciar a los datos demo:** en `⚙ Configuración → Restablecer datos demo`.
 
-Aplicar buenas prácticas.
+## Cómo publicar en hosting
 
----
+Shield es un sitio estático: cualquier hosting de archivos estáticos funciona.
 
-# Entrega
+1. Sube el contenido completo de la carpeta `shield/` (manteniendo la estructura de carpetas) a tu hosting o bucket estático (Netlify, Vercel, GitHub Pages, cPanel, S3, etc.).
+2. Asegúrate de que `index.html` quede en la raíz del sitio.
+3. No se requiere configuración de build ni variables de entorno.
 
-Genera el proyecto archivo por archivo.
+## Cómo conectar shield.alvarosiles.cloud
 
-Orden:
+1. En tu proveedor de DNS, crea un registro `CNAME` (o `A`, según el hosting) que apunte `shield.alvarosiles.cloud` al destino que indique tu proveedor de hosting.
+2. En el panel del hosting, agrega `shield.alvarosiles.cloud` como dominio personalizado del proyecto/sitio donde publicaste Shield.
+3. Activa HTTPS/SSL automático si tu proveedor lo ofrece.
+4. Verifica accediendo a `https://shield.alvarosiles.cloud` una vez que el DNS propague (puede tardar algunos minutos a horas).
 
-1. Estructura del proyecto
-2. index.html
-3. style.css
-4. app.js
-5. Archivos JSON
-6. Módulos internos
-7. README.md
+## Calidad del código
 
-Explica cada archivo antes de mostrar el código.
+- Código modular: un archivo por responsabilidad (`storage`, `utils`, `layout`, y un módulo por sección).
+- Comentarios solo donde aportan contexto no obvio.
+- Fácil de ampliar: para agregar un módulo nuevo, duplica el patrón de `js/services.js` + `pages/services.html` + `data/services.json` y agrégalo a `NAV_ITEMS` en `js/layout.js`.
 
-No resumas.
+## Licencia
 
-Espera mi confirmación antes de continuar con el siguiente archivo.
+Ver [LICENSE](LICENSE).

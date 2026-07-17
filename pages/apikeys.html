@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" data-page="apikeys">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — API Keys</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="apikeys">
+<script>window.BASE_PATH = "../";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>🔐 API Keys</h2>
+          <p>Claves de integración y tokens de tus servicios.</p>
+        </div>
+        <button class="btn btn--primary" id="add-btn" type="button">+ Nueva API key</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar__search">
+          <input type="search" id="search-input" placeholder="Buscar por nombre o servicio..." autocomplete="off" />
+        </div>
+        <select class="select" id="env-filter">
+          <option value="">Todos los entornos</option>
+          <option value="development">Desarrollo</option>
+          <option value="production">Producción</option>
+        </select>
+      </div>
+
+      <div class="record-grid" id="record-grid"></div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal: crear/editar API key -->
+<div class="modal-overlay" id="apikey-modal">
+  <div class="modal">
+    <div class="modal__header">
+      <h3 id="modal-title">Nueva API key</h3>
+      <button class="icon-btn" data-modal-close type="button">✕</button>
+    </div>
+    <form id="apikey-form">
+      <div class="modal__body">
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="f-name">Nombre</label>
+            <input type="text" id="f-name" required placeholder="Ej. Stripe API Key" />
+          </div>
+          <div class="form-field">
+            <label for="f-service">Servicio</label>
+            <input type="text" id="f-service" required placeholder="Ej. Stripe" />
+          </div>
+          <div class="form-field">
+            <label for="f-environment">Entorno</label>
+            <select id="f-environment">
+              <option value="development">Desarrollo</option>
+              <option value="production">Producción</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-key">Clave</label>
+            <input type="text" id="f-key" required />
+          </div>
+          <div class="form-field">
+            <label for="f-status">Estado</label>
+            <select id="f-status">
+              <option value="active">Activo</option>
+              <option value="inactive">Inactivo</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-notes">Notas</label>
+            <textarea id="f-notes"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn" data-modal-close>Cancelar</button>
+        <button type="submit" class="btn btn--primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="../js/layout.js"></script>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../js/apikeys.js"></script>
+</body>
+</html>

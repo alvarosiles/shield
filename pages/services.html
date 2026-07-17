@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" data-page="services">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shield — Servicios digitales</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body data-page="services">
+<script>window.BASE_PATH = "../";</script>
+
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>🌐 Servicios digitales</h2>
+          <p>Suscripciones y servicios en línea que utilizas.</p>
+        </div>
+        <button class="btn btn--primary" id="add-btn" type="button">+ Nuevo servicio</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar__search">
+          <input type="search" id="search-input" placeholder="Buscar por nombre o categoría..." autocomplete="off" />
+        </div>
+        <select class="select" id="category-filter">
+          <option value="">Todas las categorías</option>
+        </select>
+      </div>
+
+      <div class="record-grid" id="record-grid"></div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal: crear/editar servicio -->
+<div class="modal-overlay" id="service-modal">
+  <div class="modal">
+    <div class="modal__header">
+      <h3 id="modal-title">Nuevo servicio</h3>
+      <button class="icon-btn" data-modal-close type="button">✕</button>
+    </div>
+    <form id="service-form">
+      <div class="modal__body">
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="f-name">Nombre del servicio</label>
+            <input type="text" id="f-name" required placeholder="Ej. Netflix" />
+          </div>
+          <div class="form-field">
+            <label for="f-category">Categoría</label>
+            <input type="text" id="f-category" required placeholder="Ej. Streaming" />
+          </div>
+          <div class="form-field">
+            <label for="f-status">Estado</label>
+            <select id="f-status">
+              <option value="active">Activo</option>
+              <option value="inactive">Inactivo</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-url">URL</label>
+            <input type="url" id="f-url" placeholder="https://" />
+          </div>
+          <div class="form-field">
+            <label for="f-account">Cuenta</label>
+            <input type="text" id="f-account" />
+          </div>
+          <div class="form-field">
+            <label for="f-plan">Plan</label>
+            <input type="text" id="f-plan" />
+          </div>
+          <div class="form-field form-field--full">
+            <label for="f-notes">Notas</label>
+            <textarea id="f-notes"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn" data-modal-close>Cancelar</button>
+        <button type="submit" class="btn btn--primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+
+<script type="module" src="../js/layout.js"></script>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../js/services.js"></script>
+</body>
+</html>
