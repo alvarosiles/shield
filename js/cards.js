@@ -17,7 +17,7 @@ const modalTitle = document.getElementById("modal-title");
 function matchesFilters(item) {
   const term = searchInput.value.trim().toLowerCase();
   const type = typeFilter.value;
-  const haystack = `${item.bank} ${item.holder}`.toLowerCase();
+  const haystack = `${item.name} ${item.bank} ${item.holder}`.toLowerCase();
   return (!term || haystack.includes(term)) && (!type || item.type === type);
 }
 
@@ -40,8 +40,8 @@ function render() {
     <div class="wallet-card wallet-card--${item.color || "blue"}">
       <div class="wallet-card__top">
         <div>
-          <div class="wallet-card__bank">${escapeHtml(item.bank)}</div>
-          <div class="wallet-card__type">${TYPE_LABELS[item.type] ?? item.type}</div>
+          <div class="wallet-card__bank">${escapeHtml(item.name)}</div>
+          <div class="wallet-card__type">${escapeHtml(item.bank)} · ${TYPE_LABELS[item.type] ?? item.type}</div>
         </div>
         <div class="wallet-card__brand">${escapeHtml(item.brand || "")}</div>
       </div>
@@ -72,6 +72,7 @@ function openCreate() {
 function openEdit(item) {
   editingId = item.id;
   modalTitle.textContent = "Editar tarjeta";
+  document.getElementById("f-name").value = item.name;
   document.getElementById("f-bank").value = item.bank;
   document.getElementById("f-type").value = item.type;
   document.getElementById("f-brand").value = item.brand ?? "";
@@ -86,6 +87,7 @@ function openEdit(item) {
 async function handleSubmit(e) {
   e.preventDefault();
   const payload = {
+    name: document.getElementById("f-name").value.trim(),
     bank: document.getElementById("f-bank").value.trim(),
     type: document.getElementById("f-type").value,
     brand: document.getElementById("f-brand").value.trim().toUpperCase(),
@@ -121,7 +123,7 @@ function handleGridClick(e) {
   } else if (action === "edit") {
     openEdit(item);
   } else if (action === "delete") {
-    if (confirmAction(`¿Eliminar la tarjeta de "${item.bank}"?`)) {
+    if (confirmAction(`¿Eliminar la tarjeta "${item.name}"?`)) {
       deleteRecord("cards", id).then((next) => {
         records = next;
         render();

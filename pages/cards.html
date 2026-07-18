@@ -27,7 +27,7 @@
 
       <div class="toolbar">
         <div class="toolbar__search">
-          <input type="search" id="search-input" placeholder="Buscar por banco o titular..." autocomplete="off" />
+          <input type="search" id="search-input" placeholder="Buscar por nombre, banco o titular..." autocomplete="off" />
         </div>
         <select class="select" id="type-filter">
           <option value="">Todos los tipos</option>
@@ -53,8 +53,12 @@
     <form id="card-form">
       <div class="modal__body">
         <div class="form-grid">
-          <div class="form-field form-field--full">
-            <label for="f-bank">Nombre de tarjeta / Banco</label>
+          <div class="form-field">
+            <label for="f-name">Nombre de tarjeta</label>
+            <input type="text" id="f-name" required placeholder="Ej. Tarjeta Principal" />
+          </div>
+          <div class="form-field">
+            <label for="f-bank">Banco</label>
             <input type="text" id="f-bank" required placeholder="Ej. Banco Demo" />
           </div>
           <div class="form-field">

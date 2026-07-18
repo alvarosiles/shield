@@ -2,6 +2,7 @@
   "cards": [
     {
       "id": "cd-001",
+      "name": "Tarjeta Principal",
       "bank": "Banco Demo",
       "type": "credit",
       "brand": "VISA",
@@ -13,6 +14,7 @@
     },
     {
       "id": "cd-002",
+      "name": "Cuenta Sueldo",
       "bank": "Banco Nación Demo",
       "type": "debit",
       "brand": "MASTERCARD",
@@ -24,6 +26,7 @@
     },
     {
       "id": "cd-003",
+      "name": "Compras Online",
       "bank": "Fintech Wallet",
       "type": "virtual",
       "brand": "VISA",
@@ -35,6 +38,7 @@
     },
     {
       "id": "cd-004",
+      "name": "Tarjeta Prepago",
       "bank": "Banco Prepago Demo",
       "type": "prepaid",
       "brand": "MASTERCARD",

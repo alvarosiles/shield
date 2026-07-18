@@ -12,7 +12,7 @@ const STAT_CONFIG = [
 function recordLabel(collection, item) {
   switch (collection) {
     case "credentials": return item.service;
-    case "cards": return `${item.bank} •••• ${item.last4}`;
+    case "cards": return `${item.name} •••• ${item.last4}`;
     case "payments": return item.name;
     case "services": return item.name;
     case "documents": return item.name;
